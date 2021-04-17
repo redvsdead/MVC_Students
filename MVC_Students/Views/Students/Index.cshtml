@@ -1,0 +1,84 @@
+﻿@model IEnumerable<MVC_Students.Models.Student>
+
+
+@{
+    ViewBag.Title = "Students";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            Radiophysics (@Model.Where(stud => stud.Group.Name == "Radiophysics").Count())
+        </th>
+        <th class="link">
+            @Html.ActionLink("Add new student", "Create")
+        </th>
+    </tr>
+
+    @foreach (var stud in Model)
+    {
+        if (stud.Group.Name == "Radiophysics")
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(StudSurname => stud.Surname) @Html.DisplayFor(StudName => stud.Name) @Html.DisplayFor(StudPatronym => stud.Patronym)
+                </td>
+                <td class="link">
+                    @Html.ActionLink("Edit information", "Edit", new { id = stud.Id }) |
+                    @Html.ActionLink("Remove student", "Delete", new { id = stud.Id })
+                </td>
+            </tr>
+        }
+    }
+    <tr>
+        <th>
+            Microelectronics (@Model.Where(stud => stud.Group.Name == "Microelectronics").Count())
+        </th>
+        <th class="link">
+            @Html.ActionLink("Add new student", "Create")
+        </th>
+    </tr>
+
+    @foreach (var stud in Model)
+    {
+        if (stud.Group.Name == "Microelectronics")
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(StudSurname => stud.Surname) @Html.DisplayFor(StudName => stud.Name) @Html.DisplayFor(StudPatronym => stud.Patronym)
+                </td>
+                <td class="link">
+                    @Html.ActionLink("Edit information", "Edit", new { id = stud.Id }) |
+                    @Html.ActionLink("Remove student", "Delete", new { id = stud.Id })
+                </td>
+            </tr>
+        }
+    }
+
+    <tr>
+        <th>
+            General physics (@Model.Where(stud => stud.Group.Name == "General physics").Count())
+        </th>
+        <th class="link">
+            @Html.ActionLink("Add new student", "Create")
+        </th>
+    </tr>
+    @foreach (var stud in Model)
+    {
+        if (stud.Group.Name == "General physics")
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(StudSurname => stud.Surname) @Html.DisplayFor(StudName => stud.Name) @Html.DisplayFor(StudPatronym => stud.Patronym)
+                </td>
+                <td class="link">
+                    @Html.ActionLink("Edit information", "Edit", new { id = stud.Id }) |
+                    @Html.ActionLink("Remove student", "Delete", new { id = stud.Id })
+                </td>
+            </tr>
+        }
+    }
+
+</table>
