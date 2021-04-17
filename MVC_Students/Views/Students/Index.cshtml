@@ -20,7 +20,7 @@
     @foreach (var stud in Model)
     {
         if (stud.Group.Name == "Radiophysics")
-        {
+        { 
             <tr>
                 <td>
                     @Html.DisplayFor(StudSurname => stud.Surname) @Html.DisplayFor(StudName => stud.Name) @Html.DisplayFor(StudPatronym => stud.Patronym)
